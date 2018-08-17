@@ -2,10 +2,12 @@ package br.edu.ifma.felipe.appmeuslugares;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
 
+import adapter.AdapterLugares;
 import dao.DAOMeusLugares;
 import modelo.Lugar;
 
@@ -23,5 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
         listPlaces = findViewById(R.id.listPlaces);
         listPlaces.setHasFixedSize(true);
+
+        AdapterLugares adapter = new AdapterLugares(lugares, this);
+
+        listPlaces.setAdapter(adapter);
+
+        RecyclerView.LayoutManager layout = new LinearLayoutManager(this,
+                LinearLayoutManager.VERTICAL, false);
+
+        listPlaces.setLayoutManager(layout);
+
+
     }
 }

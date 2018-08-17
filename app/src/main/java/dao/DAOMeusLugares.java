@@ -11,7 +11,6 @@ import util.DBGateway;
 public class DAOMeusLugares {
     private final String TABELA = "meuslugares";
     private DBGateway gw;
-    private ArrayList<Lugar> lista;
 
     public DAOMeusLugares(Context ctx) {
         gw = DBGateway.getInstance(ctx);
