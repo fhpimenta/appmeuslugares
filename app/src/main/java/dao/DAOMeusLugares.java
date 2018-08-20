@@ -1,5 +1,6 @@
 package dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
@@ -14,6 +15,23 @@ public class DAOMeusLugares {
 
     public DAOMeusLugares(Context ctx) {
         gw = DBGateway.getInstance(ctx);
+    }
+
+    public boolean salvar(Lugar lugar) {
+        boolean retorno = false;
+        ContentValues valores = new ContentValues();
+
+        valores.put("nome", lugar.getNome());
+        valores.put("descricao", lugar.getDescricao());
+        valores.put("latitude", lugar.getLatitude());
+        valores.put("longitude", lugar.getLongitude());
+
+        long result = gw.getDatabase().insert(TABELA, null, valores);
+        if (result > 0) {
+            retorno = true;
+        }
+
+        return retorno;
     }
 
     public ArrayList<Lugar> getLugares()

@@ -57,7 +57,6 @@ public class MapOneActivity extends FragmentActivity implements OnMapReadyCallba
                 return;
             }
             mMap.setMyLocationEnabled(true);
-            mMap.getUiSettings().setMyLocationButtonEnabled(true);
 
         }
 

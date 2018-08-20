@@ -14,9 +14,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/map"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/map"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -40,7 +40,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyDRRVueUKmydP98q7vGmYnGR5WgamylV_w" />
 
         <activity
             android:name=".MapOneActivity"
@@ -55,12 +55,19 @@
         <activity
             android:name=".MapTwoActivity"
             android:label="@string/title_activity_map_two">
-
             <intent-filter>
                 <action android:name="MAPS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="GET_LOCATION" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FormActivity">
+            <intent-filter>
+                <action android:name="FORM" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="SAVE" />
             </intent-filter>
         </activity>
     </application>
