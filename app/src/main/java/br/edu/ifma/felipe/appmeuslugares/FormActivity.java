@@ -144,6 +144,7 @@ public class FormActivity extends AppCompatActivity implements View.OnClickListe
         Uri sound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         mBuilder.setSound(sound);
         mBuilder.setVibrate(new long[] {1000, 1000});
+        mBuilder.setAutoCancel(true);
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         mNotificationManager.notify(1, mBuilder.build());

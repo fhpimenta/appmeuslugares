@@ -41,7 +41,7 @@ public class DAOMeusLugares {
 
         String[] campos = {"id", "nome", "descricao", "latitude", "longitude"};
 
-        Cursor cs = gw.getDatabase().query("meuslugares", campos, null, null, null, null, "id");
+        Cursor cs = gw.getDatabase().query("meuslugares", campos, null, null, null, null, "id DESC");
 
         while (cs.moveToNext()) {
             Lugar lugar = new Lugar();

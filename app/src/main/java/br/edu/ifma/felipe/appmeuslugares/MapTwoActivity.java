@@ -90,7 +90,7 @@ public class MapTwoActivity extends FragmentActivity implements OnMapReadyCallba
             public void onMapClick(LatLng latLng) {
                 mMap.clear();
                 mMap.addMarker(new MarkerOptions().position(latLng));
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15.0f));
                 latitude = latLng.latitude;
                 longitude = latLng.longitude;
             }
@@ -151,7 +151,7 @@ public class MapTwoActivity extends FragmentActivity implements OnMapReadyCallba
                 mMap.clear();
                 mMap.addMarker(new MarkerOptions().position(place.getLatLng()).title(place.getName().toString()));
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(place.getLatLng()));
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 12.0f));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 15.0f));
                 latitude = place.getLatLng().latitude;
                 longitude = place.getLatLng().longitude;
             }
