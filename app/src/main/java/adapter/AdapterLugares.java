@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import br.edu.ifma.felipe.appmeuslugares.MapsActivity;
 import br.edu.ifma.felipe.appmeuslugares.R;
 import modelo.Lugar;
 
@@ -43,7 +42,8 @@ public class AdapterLugares extends RecyclerView.Adapter<AdapterLugares.ViewHold
             holder.item.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, MapsActivity.class);
+                    Intent intent = new Intent("MAPS");
+                    intent.addCategory("VIEW");
 
                     Lugar lugar = lugares.get(position);
                     intent.putExtra("lugar", lugar);
